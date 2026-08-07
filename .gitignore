@@ -40,3 +40,7 @@ frontend/dist/
 .env.local
 .env.*.local
 
+.env
+.env.local
+.ai
+*.mcp.json

@@ -16,7 +16,7 @@ Resilient Upstream REST Clients: The core engine leverages isolated RestClient i
 🛠️ Stack & Dependencies
 Core Backend (Distributed System Engine)
 Java 26 OpenJDK Execution Environment
-Spring Boot v4.1.0 WebMvc Engine Framework
+Spring Boot v4.1.0 WebMsvc Engine Framework
 Apache Tomcat v11 High-Concurrency Embedded Web Server, 
 Jackson Data Bind v3 JSON Marshalling & Serialization Utilities, 
 Project Lombok Boilerplate Synthesis Management,  

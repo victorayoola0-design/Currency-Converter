@@ -1,10 +1,9 @@
 package com.currency_converter.model;
 
-import lombok.Data;
+import com.fasterxml.jackson.annotation.JsonAlias;
 
-@Data
-public class ConversionRequest {
-        private String from;
-        private String to;
-        private double amount;
-}
+public record ConversionRequest(
+        @JsonAlias({"fromCurrency", "from"}) String from,
+        @JsonAlias({"toCurrency", "to"}) String to,
+        double amount
+) {}

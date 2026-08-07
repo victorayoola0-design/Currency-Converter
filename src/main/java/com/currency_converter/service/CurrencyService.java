@@ -24,14 +24,14 @@ public class CurrencyService {
         String url = baseUrl + apiKey + "/latest/" + from.toUpperCase();
 
         ExternalApiResponse apiResponse = restClient.get().uri(url).retrieve().body(ExternalApiResponse.class);
-        if (apiResponse == null || !"success".equals(apiResponse.getResult())) {
+        if (apiResponse == null || !"success".equals(apiResponse.result())) {
             throw new RuntimeException("Failed to fetch exchange rates from external provider.");
         }
-        Double rate = apiResponse.getConversionRates().get(to.toUpperCase());
+        Double rate = apiResponse.conversionRates().get(to.toUpperCase());
         if (rate == null){
             throw new IllegalArgumentException("Invalid target currency code: " + to);
         }
         double convertedAmount = amount * rate;
-        return new ConversionResponse(from.toUpperCase(),to.toUpperCase(),amount,convertedAmount,rate);
+        return new ConversionResponse(from.toUpperCase(), to.toUpperCase(), amount, convertedAmount, rate);
     }
 }

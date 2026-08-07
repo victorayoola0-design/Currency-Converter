@@ -13,12 +13,13 @@ public class CurrencyController {
     public final CurrencyService currencyService;
 
     public CurrencyController(CurrencyService currencyService){
-    this.currencyService = currencyService;
+        this.currencyService = currencyService;
     }
+
     @PostMapping("/convert")
     public ResponseEntity<ConversionResponse> convert(@RequestBody ConversionRequest request){
-        System.out.println("Backend hit! From: " + request.getFrom() + ", To: " + request.getTo() + ", Amount: " + request.getAmount());
-        ConversionResponse response = currencyService.convert(request.getFrom(), request.getTo(), request.getAmount());
-        return  ResponseEntity.ok(response);
+        System.out.println("Backend hit! From: " + request.from() + ", To: " + request.to() + ", Amount: " + request.amount());
+        ConversionResponse response = currencyService.convert(request.from(), request.to(), request.amount());
+        return ResponseEntity.ok(response);
     }
 }
